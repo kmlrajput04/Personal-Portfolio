@@ -1,0 +1,117 @@
+// Education Section
+.education-section {
+  // Define colors
+  $dark-secondary: #1e1f2e;
+  $dark-tertiary: #2a2c39;
+  $primary: #4e9af1;
+  $secondary: #6c5ce7;
+  $light: #ffffff;
+  $gray: #aaaaaa;
+
+  padding: 4rem 10%;
+  background-color: $dark-secondary;
+  height: auto;
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    margin-bottom: 2rem;
+    margin-top: 0%;
+    color: white;
+    
+    .gradient-text {
+      background: linear-gradient(90deg, $primary, $secondary);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  .education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .education-card {
+    background-color: $dark-tertiary;
+    padding: 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .edu-logo {
+    width: 80px;
+    height: 80px;
+    background-color: $dark-secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+  }
+
+  .edu-logo-extra {
+    width: 150px;
+    height: 80px;
+    background-color: $dark-secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    img {
+      width: 130px;
+      height: 60px;
+      object-fit: contain;
+    }
+  }
+
+  h3 {
+    color: $primary;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    color: $light;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+
+  p {
+    color: $gray;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+
+    span {
+      background-color: rgba($primary, 0.1);
+      color: $primary;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+    }
+  }
+}

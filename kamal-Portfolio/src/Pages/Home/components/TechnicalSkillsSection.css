@@ -1,0 +1,230 @@
+/* SkillsSection.css */
+.TechnicalSkillsSection {
+  --primary: #4e9af1;
+  --secondary: #6c5ce7;
+  --dark: #121420;
+  --dark-secondary: #2a2c39;
+  --light: #ffffff;
+  --gray: #858792;
+  --light-gray: #e0e0e0;
+  --transition: all 0.3s ease;
+  
+  background-color: var(--dark-secondary);
+  padding: 5rem 1rem;
+}
+
+
+.TechnicalSkillsSection .skills-section{
+  background-color: #2a2c39;
+}
+
+
+
+
+.TechnicalSkillsSection .section-title {
+      font-size: 6rem;
+    color: var(--light);
+    margin : 0px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: auto;
+    text-align: center;
+}
+
+ .TechnicalSkillsSection .section-subtitle {
+  color: var(--gray);
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+/* Skills Grid */
+.TechnicalSkillsSection .skills-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  margin-top: 50px;
+  padding: 30px;
+}
+
+.TechnicalSkillsSection .skill-category {
+  background: var(--dark-secondary);
+  border-radius: 15px;
+  padding-bottom: 30px;
+  box-shadow: 0 10px 20px #4e9af1;
+  transition: transform 0.3s ease;
+}
+
+.TechnicalSkillsSection .skill-category:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px #fff;
+  
+}
+
+.TechnicalSkillsSection .category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.TechnicalSkillsSection .category-icon {
+  font-size: 28px;
+  color: var(--primary);
+  margin-right: 15px;
+  padding-left: 25px;
+}
+
+.TechnicalSkillsSection .category-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+
+}
+
+.TechnicalSkillsSection .skills-list {
+    padding-inline-start: 15px;
+    list-style: none;
+    padding-inline-end: 20px;
+}
+
+.TechnicalSkillsSection .skill-item {
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 30px;
+  color: #fff;
+  font-weight: bold;
+  
+
+}
+
+.TechnicalSkillsSection .skill-item::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.TechnicalSkillsSection  .skill-name {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.TechnicalSkillsSection .skill-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.TechnicalSkillsSection .skill-progress {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 3px;
+  width: 0; /* Initial state */
+}
+
+.TechnicalSkillsSection .tool-tag {
+  background: rgba(78, 154, 241, 0.1);
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Progress Bars */
+.TechnicalSkillsSection .skill-level {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.TechnicalSkillsSection .skill-progress {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 3px;
+  width: 0;
+  transition: width 1.5s ease;
+}
+
+/* AI Section */
+.TechnicalSkillsSection .ai-section {
+  background: var(--dark-secondary);
+  border-radius: 15px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.TechnicalSkillsSection .ai-header {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.TechnicalSkillsSection .ai-header h2 {
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+.TechnicalSkillsSection .ai-header p {
+  font-size: 25px;
+  color: #ccc;
+
+}
+
+.TechnicalSkillsSection .ai-card {
+  background: rgba(78, 154, 241, 0.05);
+  border: 1px solid rgba(78, 154, 241, 0.2);
+  border-radius: 10px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.TechnicalSkillsSection .ai-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(78, 154, 241, 0.1);
+  border-color: var(--primary);
+}
+
+.TechnicalSkillsSection .ai-card h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.TechnicalSkillsSection .ai-card h3 i {
+  margin-right: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 820px) {
+.TechnicalSkillsSection  .skills-container {
+      grid-template-columns: auto auto ;
+  }
+
+}
+
+@media (max-width: 768px) {
+ .TechnicalSkillsSection  .skills-container {
+      grid-template-columns: 1fr;
+  }
+
+ .TechnicalSkillsSection .section-title {
+      font-size: 4rem;
+  }
+
+ .TechnicalSkillsSection  .ai-section {
+      grid-template-columns: 1fr;
+  }
+}

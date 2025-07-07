@@ -1,0 +1,148 @@
+// Timeline Section
+.timeline-section {
+  // Define colors
+  $dark: #121420;
+  $dark-secondary: #1a1a2e;
+  $dark-tertiary: #2a2c39;
+  $primary: #4e9af1;
+  $secondary: #f14e9a;
+  $gray: #aaaaaa;
+  $light: #e6e6e6;
+
+  padding: 4rem 10%;
+  background-color: $dark;
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    margin-top: 0%;
+    color: white;
+    
+    .gradient-text {
+      background: linear-gradient(90deg, $primary, $secondary);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 50px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background: linear-gradient(to bottom, $primary, $secondary);
+      top: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  .timeline-date {
+    position: absolute;
+    left: -190px;
+    top: 0;
+    color: $primary;
+    font-weight: bold;
+    width: 120px;
+    text-align: right;
+
+    @media (max-width: 768px) {
+      position: relative;
+      left: 0;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+  }
+
+  .timeline-content {
+    background-color: $dark-tertiary;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: linear-gradient(90deg, $primary, $secondary);
+      border-radius: 50%;
+      left: -57px;
+      top: 20px;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
+  .company-logo {
+    width: 80px;
+    height: 80px;
+    background-color: $dark-secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+  }
+
+  h3 {
+    color: $primary;
+    margin-bottom: 5px;
+  }
+
+  h4 {
+    color: $gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+  }
+
+  p {
+    color: $light;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 8px;
+    color: $gray;
+  }
+
+  @media (max-width: 768px) {
+    .timeline {
+      padding-left: 20px;
+
+      &::before {
+        left: 8px;
+      }
+    }
+  }
+}

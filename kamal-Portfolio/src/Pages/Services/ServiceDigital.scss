@@ -1,0 +1,219 @@
+// Variables
+$space-dark: #020210;
+$space-light: #0a0a2a;
+$primary-accent: #00a8ff;
+$secondary-accent: #ff00aa;
+$text-primary: rgba(white, 0.95);
+$text-secondary: rgba(white, 0.7);
+
+// Mixins
+@mixin glass-effect($blur: 10px, $opacity: 0.2) {
+  background: rgba(white, $opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(white, 0.1);
+}
+
+@mixin text-gradient($angle: 45deg, $color1: $primary-accent, $color2: $secondary-accent) {
+  background: linear-gradient($angle, $color1, $color2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin pulse-animation($color) {
+  animation: pulse 2s infinite;
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba($color, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba($color, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba($color, 0);
+    }
+  }
+}
+
+// Component Styles
+.service-digital {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: $text-primary;
+  background: radial-gradient(ellipse at bottom, $space-dark 0%, $space-light 100%);
+
+  &__canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &__info {
+    position: relative;
+    z-index: 2;
+    padding: 4rem;
+    align-self: center;
+    max-width: 600px;
+  }
+
+  &__title {
+    @include text-gradient(135deg);
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    color: $text-secondary;
+    margin-bottom: 3rem;
+    max-width: 80%;
+  }
+
+  &__card {
+    @include glass-effect(15px, 0.15);
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: left center;
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      @include text-gradient();
+    }
+
+    p {
+      color: $text-secondary;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    &--default {
+      h3 {
+        background: none;
+        color: $text-primary;
+      }
+    }
+  }
+
+  &__cta {
+    // background: linear-gradient(135deg, $primary-accent, adjust-color($primary-accent, $lightness: -15%));
+    border: none;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    //   background: linear-gradient(135deg, adjust-color($primary-accent, $lightness: -10%), $primary-accent);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba($primary-accent, 0.3);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__hud {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    z-index: 2;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__hud-item {
+    @include glass-effect(10px, 0.1);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    min-width: 120px;
+    @include pulse-animation($primary-accent);
+  }
+
+  &__hud-label {
+    display: block;
+    font-size: 0.9rem;
+    color: $text-secondary;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__hud-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    @include text-gradient();
+  }
+
+  // Responsive adjustments
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+
+    &__info {
+      max-width: 100%;
+      padding: 2rem;
+    }
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__hud {
+      position: static;
+      margin-top: 2rem;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__subtitle {
+      max-width: 100%;
+    }
+
+    &__hud-item {
+      padding: 1rem;
+      min-width: 100px;
+    }
+
+    &__hud-value {
+      font-size: 1.8rem;
+    }
+  }
+}

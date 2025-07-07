@@ -1,0 +1,151 @@
+// Variables
+$primary: #4e9af1;
+$secondary: #6c5ce7;
+$dark: #121420;
+$dark-secondary: #1e1f2e;
+$dark-tertiary: #2a2c39;
+$light: #ffffff;
+$gray: #aaaaaa;
+
+// Base Styles
+.services-showcase {
+  padding: 6rem 10%;
+  background-color: $dark;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    }
+
+    .section-subtitle {
+      color: $gray;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background: $dark-secondary;
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba($primary, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba($primary, 0.2);
+      border-color: $primary;
+    }
+
+    .service-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      .service-icon {
+        font-size: 2rem;
+        color: $primary;
+        width: 60px;
+        height: 60px;
+        background: rgba($primary, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      }
+
+      h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        color: $light;
+      }
+    }
+
+    &:hover .service-icon {
+      background: $primary;
+      color: $light;
+      transform: rotate(15deg);
+    }
+
+    .service-body {
+      p {
+        color: $gray;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .service-features {
+        list-style: none;
+        margin-bottom: 2rem;
+
+        li {
+          padding: 0.5rem 0;
+          color: $gray;
+          position: relative;
+          padding-left: 1.5rem;
+          line-height: 1.5;
+
+          &::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    .service-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba($light, 0.1);
+
+      .price-range {
+        color: $primary;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .service-cta {
+        color: $light;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+        font-weight: 600;
+
+        &:hover {
+          color: $primary;
+          gap: 1rem;
+        }
+      }
+    }
+  }
+}

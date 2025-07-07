@@ -1,0 +1,134 @@
+.social-connect {
+  padding: 100px 10px;
+  background-color: var(--dark-tertiary);
+  position: relative;
+  overflow: hidden;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    .section-title {
+      font-size: 60px;
+         background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+      margin-bottom: 15px;
+
+      @media (max-width: 768px) {
+        font-size: 42px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 32px;
+      }
+    }
+
+    .section-subtitle {
+      color: var(--gray);
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .social-card {
+    background-color: var(--dark-secondary);
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(78, 154, 241, 0.1), rgba(108, 92, 231, 0.1));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    .social-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+      color: var(--light);
+    }
+
+    &.linkedin .social-icon {
+      background-color: #0077B5;
+    }
+
+    &.github .social-icon {
+      background-color: #333;
+    }
+
+    &.instagram .social-icon {
+      background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    }
+
+    &.whatsapp .social-icon {
+      background-color: #25D366;
+    }
+
+    .social-content {
+      h3 {
+        font-size: 20px;
+        margin-bottom: 5px;
+        color: var(--light);
+      }
+
+      p {
+        color: var(--gray);
+        font-size: 14px;
+      }
+    }
+
+    .social-arrow {
+      margin-left: auto;
+      color: var(--gray);
+      font-size: 18px;
+      transition: var(--transition);
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
