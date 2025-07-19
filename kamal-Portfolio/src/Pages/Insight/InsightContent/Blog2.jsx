@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './Blog2.css';
+import './Blog2.scss';
 
 const Blog2 = () => {
   return (
     <>
 
-          <div className="blog-container">
+          <div className="blog2-container">
 
             <header className="blog2-header">
               <h1 className="blog-title">From Junior to Senior: Navigating Web Development Career Growth</h1>
@@ -31,6 +31,7 @@ const Blog2 = () => {
                 </div>
                 
                 <h3 className="tech-title">Key Differences Between Levels</h3>
+                <div className='table-container'>
                 <table className="comparison-table">
                   <thead>
                     <tr><th>Area</th><th>Junior</th><th>Senior</th></tr>
@@ -42,6 +43,7 @@ const Blog2 = () => {
                     <tr><td>Scope</td><td>Single tasks</td><td>Project architecture</td></tr>
                   </tbody>
                 </table>
+                </div>
               </div>
               
               <div className="case-study">
@@ -87,7 +89,7 @@ const Blog2 = () => {
                 </div>
                 
                 <h3 className="tech-title">Learning Roadmap Example</h3>
-                <pre>
+                <pre  className="leaking-pre">
                   <code>{`// Example: Progressive JavaScript Mastery
 1. Core Language (ES6+)
    - Closures, prototypes, promises
@@ -136,7 +138,7 @@ const Blog2 = () => {
                 <div className="code-comparison">
                   <div>
                     <h4>Junior Project</h4>
-                    <pre>
+                    <pre className="leaking-pre">
                       <code>{`// Basic React todo app
 - Single component
 - Local state only
@@ -147,7 +149,7 @@ const Blog2 = () => {
                   </div>
                   <div>
                     <h4>Senior Project</h4>
-                    <pre>
+                    <pre className="leaking-pre">
                       <code>{`// Full-stack productivity app
 - Microfrontend architecture
 - JWT authentication
@@ -179,6 +181,7 @@ const Blog2 = () => {
               
               <div className="tech-demo">
                 <h3 className="tech-title">Communication Scenarios</h3>
+                <div className="table-container">
                 <table className="comparison-table">
                   <thead>
                     <tr><th>Situation</th><th>Junior Approach</th><th>Senior Approach</th></tr>
@@ -189,9 +192,9 @@ const Blog2 = () => {
                     <tr><td>Design discussion</td><td>"I like React better"</td><td>"React's component model better matches our design system requirements"</td></tr>
                   </tbody>
                 </table>
-                
+                </div>
                 <h3 className="tech-title">Writing Effective Technical Docs</h3>
-                <pre>
+                <pre className="leaking-pre">
                   <code>{`# API Design Proposal
 
 ## Problem
@@ -242,7 +245,7 @@ Elasticsearch provides best long-term value given our...`}</code>
                 </ul>
                 
                 <h3 className="tech-title">Creating a Promotion Packet</h3>
-                <pre>
+                <pre className="leaking-pre">
                   <code>{`// Example Promotion Packet Outline
 1. Impact Summary
    - Shipped 3 major features
@@ -306,7 +309,7 @@ Elasticsearch provides best long-term value given our...`}</code>
                 </div>
                 
                 <h3 className="tech-title">When to Specialize</h3>
-                <pre>
+                <pre className="leaking-pre">
                   <code>{`if (you.enjoyDeepDives && 
     demandForSkill.isHigh && 
     !earlyCareer) {
@@ -354,7 +357,7 @@ Elasticsearch provides best long-term value given our...`}</code>
                 </div>
                 
                 <h3 className="tech-title">Behavioral Questions</h3>
-                <pre>
+                <pre className="leaking-pre">
                   <code>{`// STAR Method Response Structure
 Situation: "When our team inherited legacy code..."
 Task: "We needed to improve reliability..."
@@ -400,14 +403,14 @@ Result: "Reduced bugs by 65% and..."
                 <div className="code-comparison">
                   <div>
                     <h4>Junior Review</h4>
-                    <pre>
+                    <pre className="leaking-pre">
                       <code>{`// Comment on PR:
 "Fix the indentation"`}</code>
                     </pre>
                   </div>
                   <div>
                     <h4>Senior Review</h4>
-                    <pre>
+                    <pre className="leaking-pre">
                       <code>{`// Comment on PR:
 "Consider extracting this logic to a 
 separate function since we use it in 
@@ -440,6 +443,7 @@ if the network request fails?"`}</code>
               
               <div className="tech-demo">
                 <h3 className="tech-title">Networking Strategies</h3>
+                <div className='table-container'>
                 <table className="comparison-table">
                   <thead>
                     <tr><th>Approach</th><th>Junior</th><th>Senior</th></tr>
@@ -451,9 +455,10 @@ if the network request fails?"`}</code>
                     <tr><td>Open Source</td><td>Use projects</td><td>Contribute/maintain</td></tr>
                   </tbody>
                 </table>
+                </div>
                 
                 <h3 className="tech-title">Effective Outreach Template</h3>
-                <pre>
+                <pre className="leaking-pre">
                   <code>{`Subject: Appreciated your talk on [topic]
 
 Hi [Name],
@@ -502,7 +507,7 @@ Best,
                 </ul>
                 
                 <h3 className="tech-title">Negotiation Scripts</h3>
-                <pre>
+                <pre className="leaking-pre">
                   <code>{`// When asked for current salary:
 "I'm focusing on roles in the [range] 
 range based on my research of this 
@@ -542,7 +547,7 @@ equity/remote days] instead?"`}</code>
               
               <div className="tech-demo">
                 <h3 className="tech-title">Technical Debt Assessment</h3>
-                <pre>
+                <pre className="leaking-pre">
                   <code>{`// Debt Evaluation Framework
 1. Identify Debt
    - Code smells
@@ -603,7 +608,7 @@ equity/remote days] instead?"`}</code>
                 </ul>
                 
                 <h3 className="tech-title">Content Creation Framework</h3>
-                <pre>
+                <pre className="leaking-pre">
                   <code>{`// The 4P Content Model
 1. Problem: Identify pain point
    "Struggling with React performance?"
@@ -638,6 +643,7 @@ equity/remote days] instead?"`}</code>
               
               <div className="tech-demo">
                 <h3 className="tech-title">Burnout Prevention Strategies</h3>
+                <div className='table-container'>
                 <table className="comparison-table">
                   <thead>
                     <tr><th>Area</th><th>Junior Approach</th><th>Senior Approach</th></tr>
@@ -649,9 +655,9 @@ equity/remote days] instead?"`}</code>
                     <tr><td>Stress</td><td>Hero complex</td><td>Systems thinking</td></tr>
                   </tbody>
                 </table>
-                
+                </div>
                 <h3 className="tech-title">Setting Professional Boundaries</h3>
-                <pre>
+                <pre className="leaking-pre">
                   <code>{`// Effective Boundary Scripts
 On after-hours requests:
 "I'll prioritize this first thing tomorrow"
@@ -735,7 +741,7 @@ this as separate work"`}</code>
               
               <div className="tech-demo">
                 <h3 className="tech-title">Learning Framework</h3>
-                <pre>
+                <pre className="leaking-pre">
                   <code>{`// The 70/20/10 Learning Model
 70% - On-the-job challenges
    - New projects
@@ -754,6 +760,7 @@ this as separate work"`}</code>
                 </pre>
                 
                 <h3 className="tech-title">Quarterly Learning Plan</h3>
+                <div className='table-container'>
                 <table className="comparison-table">
                   <thead>
                     <tr><th>Area</th><th>Goal</th><th>Activity</th></tr>
@@ -764,6 +771,7 @@ this as separate work"`}</code>
                     <tr><td>Career</td><td>Get promoted</td><td>Complete leadership course</td></tr>
                   </tbody>
                 </table>
+                </div>
               </div>
               
               <div className="case-study">
@@ -778,7 +786,7 @@ this as separate work"`}</code>
             </div>
 
             {/* Conclusion */}
-            <div className="cta-cantainer">
+            <div className="cta-container">
               <h3 className="cta-title">Take Control of Your Developer Career</h3>
               <p>Consistent, intentional growth compounds over time. Start with one area to focus on this quarter.</p>
             </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './InsightMain.scss';
+import AI_Image from "../../assets/Ai in web dev.png"
 
 
 const InsightMain = ({ filteredInsights }) => {
@@ -25,7 +26,8 @@ const handleArticleClick = (slug) => {
         {filteredInsights.map(insight => (
           <article key={insight.slug} className={`blog-article ${insight.isFeatured ? 'featured' : ''}`}>
             <div className="article-image">
-              <img src={insight.image.url} alt={insight.image.alt} />
+              <img   src={insight.image.url ? insight.image.url : AI_Image} 
+alt={insight.image.alt} />
               {insight.isFeatured && <span className="featured-badge">Featured</span>}
             </div>
             <div className="article-content">

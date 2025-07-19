@@ -139,15 +139,35 @@ footer { grid-area: footer; }`}</code></pre>
           
           <div className="blog6-tech-demo">
             <h3 className="blog6-tech-title">Comparison Table</h3>
-            <table className="blog6-comparison-table">
-              <tbody>
-                <tr><th>Scenario</th><th>Best Choice</th><th>Reason</th></tr>
-                <tr><td>One-dimensional layouts</td><td>Flexbox</td><td>Simpler syntax for linear items</td></tr>
-                <tr><td>Complex two-dimensional layouts</td><td>Grid</td><td>Precise row/column control</td></tr>
-                <tr><td>Micro layouts within components</td><td>Flexbox</td><td>Better content-based sizing</td></tr>
-                <tr><td>Overall page structure</td><td>Grid</td><td>Template-based organization</td></tr>
-              </tbody>
-            </table>
+<table className="blog6-comparison-table">
+  <tbody>
+    <tr>
+      <th>Scenario</th>
+      <th>Best Choice</th>
+      <th>Reason</th>
+    </tr>
+    <tr>
+      <td data-label="Scenario">One-dimensional layouts</td>
+      <td data-label="Best Choice">Flexbox</td>
+      <td data-label="Reason">Simpler syntax for linear items</td>
+    </tr>
+    <tr>
+      <td data-label="Scenario">Complex two-dimensional layouts</td>
+      <td data-label="Best Choice">Grid</td>
+      <td data-label="Reason">Precise row/column control</td>
+    </tr>
+    <tr>
+      <td data-label="Scenario">Micro layouts within components</td>
+      <td data-label="Best Choice">Flexbox</td>
+      <td data-label="Reason">Better content-based sizing</td>
+    </tr>
+    <tr>
+      <td data-label="Scenario">Overall page structure</td>
+      <td data-label="Best Choice">Grid</td>
+      <td data-label="Reason">Template-based organization</td>
+    </tr>
+  </tbody>
+</table>
           </div>
           
           <div className="blog6-case-study">

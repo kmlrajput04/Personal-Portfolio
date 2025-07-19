@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import './InsightSection.scss';
-import AI from '../../../assets/Ai in web dev.png';
+import AI_Image from '../../../assets/Ai in web dev.png';
 import getInsights from '../../../assets/database/insightData';
 
 const InsightSection = () => {
@@ -130,7 +130,7 @@ const InsightSection = () => {
             </div>
             <div className="insight-image">   
               <img
-                src={insight.image?.url || insight.image || AI} 
+                src={insight.image.url ? insight.image.url : AI_Image} 
                 alt={insight.image?.alt || insight.alt || insight.title} 
               />
             </div>
